@@ -14,7 +14,7 @@ function Prizes() {
       <div className="absolute top-10 left-[13%]  ">
         <img src={pinkStar} alt="pink-star" />
       </div>
-      <div class="absolute -right-7 top-[50%]  w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute -right-7 top-[50%]  w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
       <div className="w-[90%] mx-auto text-[20px]  text-white md:text-[32px] font-clash flex flex-col mb-10 ">
         <div className="self-end w-full min-w-[40%] md:w-[40%] ">
           <h2 className="leading-none  text-center md:text-start">
@@ -35,7 +35,7 @@ function Prizes() {
           <div className="absolute bottom-0 left-[40%]  ">
             <img src={whiteStar} alt="white-star" />
           </div>
-          <div class="absolute left-10  w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute left-10  w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
           <div className="relative z-10 ">
             <img src={trophy} alt="trophy image" />
           </div>

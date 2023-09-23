@@ -21,6 +21,7 @@ function Contact() {
   const navigate = useNavigate();
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const [showModal, setShowModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const modalHeaderText = "Your message has been sent";
   const paragraphText = "  We will get back to you as soon as possible";
   //function to update desktop state based on the width of the screen
@@ -28,11 +29,13 @@ function Contact() {
     setIsDesktop(window.innerWidth > 768); // Adjust the breakpoint as needed
   };
   const messageTeam = async (formData) => {
+    setIsLoading(true);
     try {
       const data = await contactTeam(formData);
+      setIsLoading(false);
       if (data) setShowModal(true);
-      console.log(data);
     } catch (error) {
+      setIsLoading(false);
       console.log(error);
     }
   };
@@ -47,10 +50,10 @@ function Contact() {
 
   return (
     <>
-      {isDesktop && <Navbar />}
+      {isDesktop && <Navbar isContactPage />}
       <section className="py-14 relative">
-        <div class="absolute -left-10 top-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
-        <div class="absolute -right-10 bottom-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -left-10 top-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -right-10 bottom-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
         <div
           onClick={() => navigate("/")}
           className="absolute flex items-center justify-center md:hidden rounded-full border border-[#D434FE] cursor-pointer w-[23px] h-[23px] top-4 left-4"
@@ -152,6 +155,11 @@ function Contact() {
                 </div>
               </Form>
             </Formik>
+            {isLoading && (
+              <p className="text-[#D434FE] w-full text-center">
+                Please wait.......
+              </p>
+            )}
           </div>
 
           {/* socials div */}

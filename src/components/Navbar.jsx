@@ -5,15 +5,16 @@ import Button from "./Button";
 import hamburger from "../assets/images/hamburger.png";
 import closeIcon from "../assets/images/vector-close.png";
 import { useState } from "react";
+import Contact from "../pages/Contact";
 
 const navLinks = [
-  { name: "Timeline", to: "/timeline" },
-  { name: "Overview", to: "/overview" },
-  { name: "FAQs", to: "/faq" },
+  { name: "Timeline", to: "/#timeline" },
+  { name: "Overview", to: "/#overview" },
+  { name: "FAQs", to: "/#faq" },
   { name: "Contact", to: "/contact" },
 ];
 
-function Navbar() {
+function Navbar({ isContactPage }) {
   const [showNav, setShowNav] = useState(false);
   return (
     <nav className="text-white border-b border-white/40 pt-8 pb-4 relative">
@@ -32,11 +33,18 @@ function Navbar() {
                 <li key={link.name}>
                   <NavLink
                     to={link.to}
-                    className={({ isActive, isPending }) =>
-                      isActive
-                        ? "font-montserrat  gradient-text"
-                        : "font-montserrat"
+                    className={`${
+                      link.name === "Contact" && isContactPage
+                        ? "gradient-text"
+                        : null
                     }
+                       font-montserrat
+                      `}
+                    // className={({ isActive, isPending }) =>
+                    //   isActive
+                    //     ? "font-montserrat  gradient-text"
+                    //     : "font-montserrat"
+                    // }
                   >
                     {link.name}
                   </NavLink>
@@ -76,11 +84,18 @@ function Navbar() {
             <li key={link.name}>
               <NavLink
                 to={link.to}
-                className={({ isActive, isPending }) =>
-                  isActive
-                    ? "font-montserrat  gradient-text"
-                    : "font-montserrat"
+                className={`${
+                  link.name === "Contact" && isContactPage
+                    ? "gradient-text"
+                    : null
                 }
+                 font-montserrat
+                `}
+                // className={({ isActive, isPending }) =>
+                //   isActive
+                //     ? "font-montserrat  gradient-text"
+                //     : "font-montserrat"
+                // }
               >
                 {link.name}
               </NavLink>

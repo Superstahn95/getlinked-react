@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
-import axios from "axios";
 import Navbar from "../components/Navbar";
-import thumbsUp from "../assets/images/thumbs-up.png";
 import * as Yup from "yup";
 import MyTextInput from "../components/formInputs/MyTextInput";
 import MySelectField from "../components/formInputs/MySelectField";
@@ -10,22 +8,22 @@ import MyCheckBox from "../components/formInputs/MyCheckBox";
 import Button from "../components/Button";
 import boy from "../assets/images/boy-movement.png";
 import girl from "../assets/images/girl-movement.png";
+import thumbsUp from "../assets/images/thumbs-up.png";
 import { getCategories } from "../api/apiCalls";
 import Modal from "../components/Modal";
-import purpleShadow from "../assets/images/purple-shadow.png";
 import purpleStar from "../assets/images/purple-star.png";
 import ashStar from "../assets/images/ash-star.png";
-import whiteStar from "../assets/images/white-star.png";
 import { registerTeam } from "../api/apiCalls";
 
 function Register() {
   const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const [showModal, setShowModal] = useState(false);
   const signUp = async (formData) => {
-    console.log(formData);
+    setIsLoading(true);
     const data = await registerTeam(formData);
-    console.log(data);
+    setIsLoading(false);
     if (!data) return alert("Email taken");
     if (data) setShowModal(true);
   };
@@ -60,8 +58,8 @@ function Register() {
       {isDesktop && <Navbar />}
 
       <section className="relative py-4">
-        <div class="absolute -left-10 top-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
-        <div class="absolute -right-10 bottom-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -left-10 top-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute -right-10 bottom-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
         <div className="absolute right-[10%] top-[15%] md:left-[10%] md:top-[10%]">
           <img src={purpleStar} alt="purple star" />
         </div>
@@ -173,7 +171,9 @@ function Register() {
                   <MySelectField name="group_size" label="Group size">
                     <option value="">Select</option>
                     {groupSizeArray.map((number) => (
-                      <option value={number}>{number}</option>
+                      <option key={number} value={number}>
+                        {number}
+                      </option>
                     ))}
                   </MySelectField>
                 </div>
@@ -191,6 +191,11 @@ function Register() {
                 </div>
               </Form>
             </Formik>
+            {isLoading && (
+              <p className="text-[#D434FE] w-full text-center">
+                Please wait.......
+              </p>
+            )}
           </div>
         </div>
         <Modal

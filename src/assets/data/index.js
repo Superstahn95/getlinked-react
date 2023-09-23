@@ -32,7 +32,7 @@ export const faqs = [
   "What happens if I don't have an idea for a project?",
   "Can I join a team or do I have to come with one?",
   "What happens after the hackathon ends",
-  "Can I work on a project I started before the hackathon?",
+  "Can I work on a  project I started before the hackathon?",
 ];
 
 export const activities = [

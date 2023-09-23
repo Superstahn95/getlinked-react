@@ -20,7 +20,7 @@ function Hero() {
           </h2>
         </div>
         {/* background patch */}
-        <div class="absolute left-5 top-5 md:left-[20%] w-[150px] h-[150px] md:w-[300px]  md:-top-16 md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute left-5 top-5 md:left-[20%] w-[150px] h-[150px] md:w-[300px]  md:-top-16 md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
         {/* backdrop-blur-lg blur-3xl */}
         <div className="w-[95%]  md:ml-auto grid md:grid-cols-2  ">
           {/* header div container */}
@@ -97,7 +97,7 @@ function Hero() {
             }}
             className="relative  bg-top-1/4 "
           >
-            <div class="absolute top-[15%] left-1/4 w-1/2 h-1/2 rounded-full   bg-gradient-to-b from-[#903aff] via-transparent to-transparent filter blur-3xl"></div>
+            <div className="absolute top-[15%] left-1/4 w-1/2 h-1/2 rounded-full   bg-gradient-to-b from-[#903aff] via-transparent to-transparent filter blur-3xl"></div>
             <div className="relative -left-7">
               <img src={lighting} alt="lighting" />
             </div>

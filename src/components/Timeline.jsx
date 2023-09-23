@@ -4,7 +4,10 @@ import purpleStar from "../assets/images/purple-star.png";
 
 function Timeline() {
   return (
-    <section className="py-10 text-white border-b border-white/40 relative">
+    <section
+      id="timeline"
+      className="py-10 text-white border-b border-white/40 relative"
+    >
       <div className="absolute top-10 left-[10%]  ">
         <img src={purpleStar} alt="purple-star" className="w-4 h-4" />
       </div>

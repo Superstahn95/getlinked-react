@@ -8,7 +8,7 @@ import ashStar from "../assets/images/ash-star.png";
 
 function Faq() {
   return (
-    <section className="py-10 border-b border-white/40">
+    <section id="faq" className="py-10 border-b border-white/40">
       <div className="w-[80%] mx-auto grid gap-4 md:grid-cols-2">
         <div className="text-[20px] text-white md:text-[32px] font-clash self-center text-center md:text-start ">
           <h2>Frequently Ask</h2>
