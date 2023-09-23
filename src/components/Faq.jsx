@@ -1,6 +1,10 @@
 import { Disclosure } from "@headlessui/react";
 import thinking from "../assets/images/thinking-man.png";
 import { faqs } from "../assets/data";
+import whiteStar from "../assets/images/white-star.png";
+import purpleStar from "../assets/images/purple-star.png";
+import pinkStar from "../assets/images/pink-star.png";
+import ashStar from "../assets/images/ash-star.png";
 
 function Faq() {
   return (
@@ -43,6 +47,15 @@ function Faq() {
           </div>
         </div>
         <div className="relative mt-20 ">
+          <div className="absolute bottom-0 right-14 ">
+            <img src={whiteStar} alt="white-star" />
+          </div>
+          <div className="absolute top-[50%] left-5 ">
+            <img src={ashStar} alt="ash-star" />
+          </div>
+          <div className="absolute top-[10%] left-[10%] ">
+            <img src={pinkStar} alt="pink-star" />
+          </div>
           <div className="absolute left-[30%] -top-[15%] md:-top-[23%]">
             <h2 className="font-tommy md:text-[128px] text-[64px] text-[#D434FE]">
               ?

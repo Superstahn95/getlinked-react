@@ -23,6 +23,7 @@ export const registerTeam = async (formData) => {
   try {
     const { data } = await client.post("hackathon/registration", formData);
     return data;
+    // return data;
   } catch (error) {
     console.log(error);
   }

@@ -5,7 +5,6 @@ import Button from "./Button";
 import hamburger from "../assets/images/hamburger.png";
 import closeIcon from "../assets/images/vector-close.png";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const navLinks = [
   { name: "Timeline", to: "/timeline" },
@@ -15,17 +14,16 @@ const navLinks = [
 ];
 
 function Navbar() {
-  const navigate = useNavigate();
   const [showNav, setShowNav] = useState(false);
   return (
     <nav className="text-white border-b border-white/40 pt-8 pb-4 relative">
       <div className="w-[90%] mx-auto flex items-center justify-between ">
-        <h2
-          onClick={() => navigate("/")}
+        <Link
+          to={"/"}
           className="text-white text-[15px] md:text-[36px] font-clash cursor-pointer"
         >
           get<span className="text-[#D434FE]">linked</span>
-        </h2>
+        </Link>
         {/* desktop nav links container to be hidden in mobile */}
         <div className="hidden items-center  self-end  space-x-14 md:flex">
           <div>
@@ -47,7 +45,17 @@ function Navbar() {
             </ul>
           </div>
           {/* register button */}
-          <Button text={"Regsiter"} />
+          {/* <Button text={"Regsiter"} /> */}
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "border border-[#D434FE] rounded-md w-[172px] h-[53px] flex items-center justify-center"
+                : "custom-horizontal-gradient rounded-md w-[172px] h-[53px] flex items-center justify-center"
+            }
+            to={"/register"}
+          >
+            Register
+          </NavLink>
         </div>
         {/* hamburger */}
         <div
@@ -81,7 +89,17 @@ function Navbar() {
         </ul>
         <div className="mt-5">
           {" "}
-          <Button text={"Regsiter"} />
+          {/* <Button text={"Regsiter"} /> */}
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "p-4 border border-[#D434FE] rounded-md"
+                : "custom-horizontal-gradient p-4 rounded-md"
+            }
+            to={"/register"}
+          >
+            Register
+          </NavLink>
         </div>
         <div
           onClick={() => setShowNav(false)}

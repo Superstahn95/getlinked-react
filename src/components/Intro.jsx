@@ -1,5 +1,6 @@
 import idea from "../assets/images/idea.png";
 import purpleStar from "../assets/images/purple-star.png";
+import pinkStar from "../assets/images/pink-star.png";
 
 function Intro() {
   return (
@@ -7,7 +8,7 @@ function Intro() {
       <div className="w-[90%] mx-auto  grid gap-4 md:grid-cols-2">
         <div className="md:ml-10 flex ">
           <div className="mt-28">
-            <img src={purpleStar} alt="purple star" />
+            <img src={pinkStar} alt="pink star" />
           </div>
           <div>
             <img src={idea} alt="idea" />

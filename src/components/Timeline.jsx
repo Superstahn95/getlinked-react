@@ -1,8 +1,16 @@
 import { activities } from "../assets/data";
+import whiteStar from "../assets/images/white-star.png";
+import purpleStar from "../assets/images/purple-star.png";
 
 function Timeline() {
   return (
-    <section className="py-10 text-white border-b border-white/40">
+    <section className="py-10 text-white border-b border-white/40 relative">
+      <div className="absolute top-10 left-[10%]  ">
+        <img src={purpleStar} alt="purple-star" className="w-4 h-4" />
+      </div>
+      <div className="absolute top-[40%] right-[10%]  ">
+        <img src={whiteStar} alt="white-star" className="w-4 h-4" />
+      </div>
       <h2 className="font-clash text-[20px] md:text-[32px] text-center ">
         Timeline
       </h2>

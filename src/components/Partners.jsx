@@ -6,7 +6,9 @@ import wisper from "../assets/images/wisper.png";
 
 function Partners() {
   return (
-    <section className="py-10 border-t border-white/40">
+    <section className="py-10 relative border-t border-white/40">
+      <div class="absolute -left-10 top-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+      <div class="absolute -right-10 bottom-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
       <div className="w-[90%] mx-auto flex flex-col items-center">
         <h2 className="font-clash text-[20px] md:text-[32px] text-white font-bold">
           Partners and Sponsors

@@ -25,11 +25,11 @@ function Register() {
   const signUp = async (formData) => {
     console.log(formData);
     const data = await registerTeam(formData);
-    if (data) setShowModal(true);
     console.log(data);
+    if (!data) return alert("Email taken");
+    if (data) setShowModal(true);
   };
-  const modalHeaderText =
-    "Congratulations <br /> you have successfully registered";
+  const modalHeaderText = "Congratulations you have successfully registered";
   const paragraphText =
     "Yes, it was easy and you did it! check your mailbox for next step";
   //function to generate an array with items ranging from 1 to 10
@@ -60,6 +60,8 @@ function Register() {
       {isDesktop && <Navbar />}
 
       <section className="relative py-4">
+        <div class="absolute -left-10 top-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute -right-10 bottom-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
         <div className="absolute right-[10%] top-[15%] md:left-[10%] md:top-[10%]">
           <img src={purpleStar} alt="purple star" />
         </div>
@@ -78,7 +80,7 @@ function Register() {
         </h2>
         <div className="w-[90%] mx-auto grid md:grid-cols-2 gap-8">
           <div className="relative ">
-            <div className="relative z-[99]">
+            <div className="relative z-10">
               <img src={thumbsUp} alt="thumbs up" />
             </div>
           </div>
@@ -184,8 +186,8 @@ function Register() {
                     policy
                   </MyCheckBox>
                 </div>
-                <div className="mt-4 text-center">
-                  <Button text={"Submit"} isFullWidth={isDesktop} />
+                <div className="mt-4 w-full bg-red-500">
+                  <Button text={"Submit"} isFullWidth type="submit" />
                 </div>
               </Form>
             </Formik>

@@ -7,6 +7,7 @@ import x from "../assets/images/x.png";
 import purpleStar from "../assets/images/purple-star.png";
 import ashStar from "../assets/images/ash-star.png";
 import whiteStar from "../assets/images/white-star.png";
+import backArrow from "../assets/images/back.png";
 import facebook from "../assets/images/facebook.png";
 import MyTextInput from "../components/formInputs/MyTextInput";
 import MyTextArea from "../components/formInputs/MyTextArea";
@@ -14,8 +15,10 @@ import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import { contactTeam } from "../api/apiCalls";
 import Modal from "../components/Modal";
+import { useNavigate } from "react-router-dom";
 
 function Contact() {
+  const navigate = useNavigate();
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
   const [showModal, setShowModal] = useState(false);
   const modalHeaderText = "Your message has been sent";
@@ -46,6 +49,14 @@ function Contact() {
     <>
       {isDesktop && <Navbar />}
       <section className="py-14 relative">
+        <div class="absolute -left-10 top-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div class="absolute -right-10 bottom-0 w-[150px] h-[150px] md:w-[300px]  md:h-[300px] bg-gradient-to-t from-[#903AFF] to-transparent rounded-full blur-3xl"></div>
+        <div
+          onClick={() => navigate("/")}
+          className="absolute flex items-center justify-center md:hidden rounded-full border border-[#D434FE] cursor-pointer w-[23px] h-[23px] top-4 left-4"
+        >
+          <img src={backArrow} alt="back arrow" />
+        </div>
         <div className="absolute right-[10%] top-[15%] md:left-[10%] md:top-[10%]">
           <img src={purpleStar} alt="purple star" />
         </div>

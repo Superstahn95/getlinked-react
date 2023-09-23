@@ -8,7 +8,7 @@ import location from "../assets/images/location.png";
 function Footer() {
   //alterations to be made
   return (
-    <footer className="py-10  shadow-2xl">
+    <footer className="py-10  shadow-2xl bg-[#100B20]">
       <div className="w-[80%] mx-auto ">
         <div className="grid md:grid-cols-3">
           <div className="flex flex-col justify-between ">

@@ -27,7 +27,7 @@ function Modal({ isOpen, setShowModal, headerText, paragraph }) {
           <div className="fixed inset-0 bg-black bg-opacity-25" />
         </Transition.Child>
 
-        <div className="fixed inset-0 bg-black/60 overflow-y-auto">
+        <div className="fixed inset-0 bg-black/90 overflow-y-auto">
           <div className="flex min-h-full   items-center justify-center p-4 text-center">
             <Transition.Child
               as={Fragment}
@@ -51,15 +51,15 @@ function Modal({ isOpen, setShowModal, headerText, paragraph }) {
                   </div>
                 </Dialog.Title>
                 <div className="mt-2">
-                  <h2 className="text-[32px] font-montserrat font-semibold text-white">
+                  <h2 className="text-[32px] text-center font-montserrat font-semibold text-white">
                     {headerText}
                   </h2>
-                  <p className="font-montserrat text-[14px] text-white text-center">
+                  <p className="font-montserrat  text-[14px] text-white text-center">
                     {paragraph}
                   </p>
                 </div>
 
-                <div className="mt-4">
+                <div className="mt-4 flex items-center justify-center ">
                   <Button isFullWidth onPressButton={closeModal} text="Back" />
                   {/* <button
                     type="button"
