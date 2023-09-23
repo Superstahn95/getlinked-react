@@ -12,14 +12,14 @@ import Page404 from "./pages/page404";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
+    <>
       <Route path="/" element={<GeneralLayout />}>
         <Route index element={<Home />} />
       </Route>
       <Route path="/contact" element={<Contact />} />
       <Route path="/register" element={<Register />} />
       <Route path="*" element={<Page404 />} />
-    </Route>
+    </>
   )
 );
 function App() {
